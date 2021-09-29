@@ -4,13 +4,17 @@
 #include <vector>
 #include <memory>
 
-#define COLS 50
-#define ROWS 50 
-#define LIFETIME 120
+#define COLS 60
+#define ROWS 50
 
-struct Cell {
-  bool alive = (rand() < (RAND_MAX / 2));
-  bool next_state = false;
+class Cell {
+  bool alive;
+  bool alive_next;
+
+public:
+
+  Cell() : alive(rand() < (RAND_MAX / 2)) {}
+
   std::vector< std::shared_ptr<Cell> > neighbors;
 
   void Draw() const;
@@ -19,7 +23,7 @@ struct Cell {
 };
 
 class CellGrid {
-  std::array< std::array<Cell,ROWS>,COLS > cells;
+  std::array< std::array<Cell, COLS>, ROWS > cells;
 
 public:
 

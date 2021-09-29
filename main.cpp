@@ -10,7 +10,6 @@ int main() {
   for (int i = 5*LIFETIME; i > 0; i--) {
     game.Draw();
     usleep(200*1000);
-    //system("cls");
     system("clear");
     game.Grow();
   }

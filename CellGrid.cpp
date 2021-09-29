@@ -14,13 +14,13 @@ void Cell::PrepGrowth() {
       sum++;
 
   if(sum == 3 || (sum == 2 && alive))
-    next_state = true;
+    alive_next = true;
   else
-    next_state = false;
+    alive_next = false;
 }
 
 void Cell::Grow() {
-  alive = next_state;
+  alive = alive_next;
 }
 
 CellGrid::CellGrid() {
